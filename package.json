@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file-changer.js",
+  "scripts": {
+    "lint": "eslint '**/*.js'",
+    "test-watch": "jest --watchAll",
+    "test": "jest --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+  },
+  "author": "Morgan T Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.7.1",
+    "faker": "^4.1.0",
+    "jest": "^24.9.0"
+  }
+}
