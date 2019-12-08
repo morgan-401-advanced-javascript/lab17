@@ -1,6 +1,7 @@
 'use strict';
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:3000');
+const server = require('./server.js');
 
 const fs = require('fs');
 const util = require('util');
@@ -13,9 +14,11 @@ const alterFile = async file => {
   try {
     let contents = await readFile(file);
     await writeFile(file, faker.lorem.sentence());
-    console.log(`${file} saved`);
+    socket.emit('save', file);
+    // console.log(`${file} saved`);
   } catch (e) {
-    throw e;
+    socket.emit('error', e);
+    // throw e;
   }
 };
 
