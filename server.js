@@ -10,3 +10,7 @@ socket.on('save', file=>{
 socket.on('error', error=>{
   logger.errorLog(error);
 });
+
+socket.on('connection', data=>{
+  console.log(`${data}`);
+});
