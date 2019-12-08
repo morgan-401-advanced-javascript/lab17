@@ -2,12 +2,10 @@
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:3000');
 
-const saveLog = (file)=>{
+socket.on('save', file=>{
   console.log(`File ${file} changed successfully`);
-};
-const errorLog = (error)=>{
-  console.log(`File change error ${error}`);
-};
+});
+socket.on('error', err=>{
+  console.log(`File change error ${err}`);
+});
 
-
-module.exports = {errorLog, saveLog};
