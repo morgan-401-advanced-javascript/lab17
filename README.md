@@ -16,4 +16,4 @@
 npm test
 
 #### UML
-!(UML)[./assets/uml.jpg]
+![UML](./assets/uml.jpg)
